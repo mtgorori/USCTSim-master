@@ -48,13 +48,14 @@ save([dst_path,'\sourse_wave.mat'],'source_wave');
 % t_pos(1,t_num/2+1:t_num) = t_pos(1,1:t_num/2);
 % t_pos(2,t_num/2+1:t_num) = -t_size/2;
 % Define sensors
-t_size = 40.e-3;
+t_size = 19.8*2.e-3;
+t_facing_distance = 40e-3;
 t_num = 200;%トランスデューサ数
 t_pos = zeros(2, t_num);%センサ位置
 t_pos(1,1:t_num/2) = -t_size/2:t_size/(t_num/2-1):t_size/2 ;%素子水平方向距離[m]
-t_pos(2,1:t_num/2) = t_size/2;
+t_pos(2,1:t_num/2) = t_facing_distance/2;
 t_pos(1,t_num/2+1:t_num) = t_pos(1,1:t_num/2);
-t_pos(2,t_num/2+1:t_num) = -t_size/2;
+t_pos(2,t_num/2+1:t_num) = -t_facing_distance/2;
 sensor.mask=t_pos;
 sensor.record = {'p'}; % define the acoustic parameters to record
 save([dst_path,'\sensor.mat'],'sensor');
