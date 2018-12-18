@@ -108,13 +108,13 @@ for step=1:num_step
     rfdata(:,:,step)=gather(sensor_data.p).';
     
     % Plot the simulated sensor data
-    figure;
-    imagesc(sensor_data.p.',[-0.1 0.1]);
-    xlabel('Sensor Position');
-    ylabel('Time Step');
-    colorbar;
-    saveas(gcf, [save_path, '\rf'], 'png')
-    close all
+%     figure;
+%     imagesc(sensor_data.p.',[-0.1 0.1]);
+%     xlabel('Sensor Position');
+%     ylabel('Time Step');
+%     colorbar;
+%     saveas(gcf, [save_path, '\rf'], 'png')
+%     close all
     
 end
 
